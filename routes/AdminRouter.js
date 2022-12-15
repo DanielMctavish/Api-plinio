@@ -2,7 +2,7 @@ const AdminRouter = require("express").Router();
 
 
 AdminRouter.get("/",(req,res)=>{
-    res.send("entrando na rota de administrador")
+    res.render("login")
 })
 
 AdminRouter.post("/loginauth",(req,res)=>{

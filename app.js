@@ -57,10 +57,10 @@ app.use(bodyParser.json())
 //ROTAS----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 app.use("/admin",AdminRouter)
-app.use("/routerAddClotch", RouterAddClotch)
+app.use("/routeraddclotch", RouterAddClotch)
 
 app.get("/", (req, res) => {
-    res.json({ msg: "teste da primeira rota" })
+    res.render("home")
 })
 
 app.get("/login", (req, res) => {
@@ -111,7 +111,7 @@ app.post("/registration", async (req, res) => {
 
 
 //mongodb-connect..............................................................................................................................
-mongoose.connect("mongodb+srv://daniel_arruda:ttbKP6KEsF9nMV7Z@plinioroupas-cluster.tiojul9.mongodb.net/?retryWrites=true&w=majority").then(() => {
+mongoose.connect("mongodb+srv://daniel_arruda:ttbKP6KEsF9nMV7Z@plinioroupas-cluster.tiojul9.mongodb.net/plinioapi?retryWrites=true&w=majority").then(() => {
     console.log("conectado ao banco de dados com sucesso");
 }).catch((err) => {
     console.log(err);
